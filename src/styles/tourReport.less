@@ -1,0 +1,351 @@
+@import "colorsMixinRoot";
+
+.report-tour {
+  position: relative;
+  padding: 120px 0;
+
+  @media screen and (max-width: 480px) {
+    padding: 80px 0;
+  }
+
+  .container {
+    .report-tour-photo {
+      padding-bottom: 60px;
+      scroll-margin-top: 50px;
+
+      .photo-title {
+        .textTitle();
+        text-align: center;
+        margin-bottom: 50px;
+
+        @media screen and (max-width: 768px) {
+          font-size: 30px;
+        }
+
+        @media screen and (max-width: 480px) {
+          font-size: 25px;
+          margin-bottom: 30px;
+        }
+      }
+
+      .report-photo-slider {
+        margin-bottom: 30px;
+
+        .slider-photo-item {
+          .image-box {
+            max-width: 1110px;
+            max-height: 550px;
+            display: grid;
+            gap: 10px;
+            justify-content: center;
+            grid-template: repeat(4, 1fr) / repeat(12, 1fr);
+
+            @media screen and (max-width: 580px) {
+              display: none;
+            }
+
+            a {
+              display: block;
+              width: 100%;
+              height: 100%;
+            }
+
+            a img {
+              border-radius: 15px;
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+
+            a:nth-child(1) {
+              grid-row: 1 / 3;
+              grid-column: 1 / 6;
+            }
+
+            a:nth-child(2) {
+              grid-row: 1 / 3;
+              grid-column: 6 / 10;
+            }
+
+            a:nth-child(3) {
+              grid-row: 3 / 5;
+              grid-column: 1 / 5;
+            }
+
+            a:nth-child(4) {
+              grid-row: 3 / 5;
+              grid-column: 5 / 10;
+            }
+
+            a:nth-child(5) {
+              grid-row: 1 / 5;
+              grid-column: 10 / 13;
+            }
+          }
+          .image-box-adaptive {
+            display: none;
+            max-width: 100%;
+            max-height: 370px;
+
+            @media screen and (max-width: 580px) {
+              display: block;
+            }
+
+            a {
+              display: block;
+              width: 100%;
+              border-radius: 15px;
+              overflow: hidden;
+            }
+
+            a img {
+              width: 100%;
+              height: 100%;
+            }
+          }
+        }
+      }
+    }
+    .report-tour-reviews {
+      max-width: 920px;
+      margin: 0 auto;
+      padding-top: 60px;
+      scroll-margin-top: 30px;
+
+      @media screen and (max-width: 480px) {
+        padding-top: 30px;
+      }
+
+      .reviews-title {
+        .textTitle();
+        text-align: center;
+        margin-bottom: 50px;
+
+        @media screen and (max-width: 480px) {
+          font-size: 25px;
+          margin-bottom: 30px;
+        }
+      }
+
+      .tour-reviews-slider {
+        display: flex;
+        margin-bottom: 30px;
+        .slick-track {
+          display: flex;
+          height: 100%;
+          gap: 30px;
+
+          @media screen and (max-width: 768px) {
+            gap: 0;
+          }
+        }
+        .slider-review-item {
+          .review-item-box {
+            max-width: 445px;
+            height: 100%;
+            .colorBorderTwo();
+            padding: 40px;
+            margin: 0 auto;
+
+            @media screen and (max-width: 480px) {
+              padding: 30px;
+            }
+
+            .review-person {
+              display: flex;
+              gap: 16px;
+              align-items: center;
+              margin-bottom: 30px;
+
+              @media screen and (max-width: 480px) {
+                margin-bottom: 20px;
+              }
+
+              .person-photo {
+                width: 49px;
+                height: 49px;
+                border-radius: 50%;
+                overflow: hidden;
+              }
+
+              .person-info {
+                .person-name {
+                  font-family: MontserratBold, sans-serif;
+                  .textDesc();
+                }
+
+                .person-place {
+                  .textDesc();
+
+                  @media screen and (max-width: 480px) {
+                    font-size: 12px;
+                  }
+                }
+              }
+            }
+//Стили для скрытия текста
+            .read-more-check {
+              display: none;
+
+              @media screen and (max-width: 425px) {
+                display: block;
+                opacity: 0;
+                position: absolute;
+              }
+
+              &:checked ~ .read-more-button {
+                display: none;
+              }
+
+              &:checked ~ .review-text {
+                display: block;
+                overflow: visible;
+                -webkit-line-clamp: none;
+              }
+            }
+
+            .review-text {
+              .textDesc();
+
+              @media screen and (max-width: 480px) {
+                font-size: 12px;
+              }
+
+              @media screen and (max-width: 425px) {
+                display: -webkit-box;
+                overflow: hidden;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 7;
+              }
+
+              @media screen and (max-width: 360px) {
+                -webkit-line-clamp: 6;
+              }
+            }
+            .read-more-button {
+              display: none;
+              font-family: MontserratBold, sans-serif;
+              font-size: 12px;
+              padding-top: 10px;
+              color: @colorBorderOrange;
+
+              @media screen and (max-width: 425px) {
+                display: block;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .air-balloon-three {
+    position: absolute;
+    left: 0;
+    bottom: 235px;
+    z-index: -1;
+
+    @media screen and (max-width: 1640px) {
+      bottom: 150px;
+    }
+
+    @media screen and (max-width: 1440px) {
+      display: none;
+    }
+  }
+}
+
+//Стили для навигации слайдера фотографий
+.slick-list {
+  overflow: hidden;
+}
+
+.slide-photo-navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.slide-photo-navigation .slide-dots {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide-photo-navigation .slide-dots li {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+}
+
+.slide-photo-navigation .slide-dots li.slick-active button {
+  background: @colorBackgroundGradient;
+  outline: none;
+
+  @media screen and (max-width: 425px) {
+    background: @colorBackgroundGradientAdaptive;
+  }
+}
+
+.slide-photo-navigation .slide-dots button {
+  font-size: 0;
+  width: 15px;
+  height: 15px;
+  outline: 1px solid @colorTextDark;
+  outline-offset: -1px;
+  border-radius: 50%;
+
+  @media screen and (max-width: 480px) {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+//Стили для навигации слайдера отзывов
+
+.slide-review-navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.slide-review-navigation .slide-dots {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide-review-navigation .slide-dots li {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+}
+
+.slide-review-navigation .slide-dots li.slick-active button {
+  background: @colorBackgroundGradient;
+  outline: none;
+
+  @media screen and (max-width: 425px) {
+    background: @colorBackgroundGradientAdaptive;
+  }
+}
+
+.slide-review-navigation .slide-dots button {
+  font-size: 0;
+  width: 15px;
+  height: 15px;
+  outline: 1px solid @colorTextDark;
+  outline-offset: -1px;
+  border-radius: 50%;
+
+  @media screen and (max-width: 480px) {
+    width: 12px;
+    height: 12px;
+  }
+}

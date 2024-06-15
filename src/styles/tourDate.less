@@ -1,0 +1,174 @@
+@import "colorsMixinRoot";
+
+.tour-info-date {
+  width: 100%;
+  background-image: url("../../assets/images/img-center.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom center;
+
+  @media screen and (max-width: 425px) {
+    background-image: url("../../assets/images/center320.png");
+    background-size: 100% 100%;
+  }
+
+  .container {
+    padding: 112px 15px;
+
+    @media screen and (max-width: 480px) {
+      padding: 80px 15px;
+    }
+
+    .tour-date-title {
+      text-align: center;
+      font-family: PhilosopherBold, sans-serif;
+      font-size: 35px;
+      color: @colorTextWhite;
+      padding-bottom: 50px;
+
+      @media screen and (max-width: 480px) {
+        font-size: 25px;
+        padding-bottom: 30px;
+      }
+    }
+
+    .tour-date-slider {
+      margin-bottom: 30px;
+
+      .slider-item {
+        margin-right: 30px;
+
+        @media screen and (max-width: 480px) {
+          margin-right: 20px;
+        }
+
+        .tour-date-card {
+          width: 350px;
+          background-color: #fff3e1;
+          border-radius: 15px;
+          padding: 40px;
+          text-align: center;
+
+          @media screen and (max-width: 1200px) {
+            width: 340px;
+          }
+
+          @media screen and (max-width: 1024px) {
+            width: 320px;
+            padding: 40px 35px;
+          }
+
+          @media screen and (max-width: 480px) {
+            padding: 30px 25px;
+            width: 280px;
+          }
+
+          @media screen and (max-width: 480px) {
+            width: 234px;
+          }
+
+          .card-info {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            padding-bottom: 35px;
+
+            @media screen and (max-width: 480px) {
+              padding-bottom: 30px;
+              gap: 20px;
+            }
+
+            .info {
+              text-align: left;
+
+              .info-title {
+                font-family: MontserratBold, sans-serif;
+                font-size: 18px;
+                color: @colorTextDark;
+                padding-bottom: 5px;
+
+                @media screen and (max-width: 480px) {
+                  font-size: 15px;
+                }
+              }
+
+              .info-number {
+                font-size: 15px;
+                color: @colorTextDark;
+
+                @media screen and (max-width: 480px) {
+                  font-size: 14px;
+                }
+
+                span {
+                  font-size: 12px;
+                  color: @colorTextLight;
+                }
+              }
+            }
+          }
+          .btn-reservation {
+            width: 248px;
+            padding: 20px;
+
+            @media screen and (max-width: 1024px) {
+              max-width: 248px;
+              padding: 15px;
+            }
+
+            @media screen and (max-width: 480px) {
+              max-width: 184px;
+              padding: 15px;
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//Стили для навигации слайдера
+.slide-navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.slide-navigation .slide-dots {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide-navigation .slide-dots li {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+}
+
+.slide-navigation .slide-dots li.slick-active button {
+  background: @colorBackgroundGradient;
+  outline: none;
+
+  @media screen and (max-width: 425px) {
+    background: @colorBackgroundGradientAdaptive;
+  }
+}
+
+.slide-navigation .slide-dots button {
+  font-size: 0;
+  width: 15px;
+  height: 15px;
+  outline: 1px solid @colorTextWhite;
+  outline-offset: -1px;
+  border-radius: 50%;
+
+  @media screen and (max-width: 480px) {
+    width: 12px;
+    height: 12px;
+  }
+}

@@ -1,0 +1,445 @@
+@import "colorsMixinRoot";
+
+.main {
+  .tour-info {
+    position: relative;
+
+    .container {
+      .advantages {
+        padding: 118px 0 60px 0;
+
+        @media screen and (max-width: 425px) {
+          padding: 80px 0 40px 0;
+        }
+
+        .advantages-title {
+          text-align: center;
+          .textTitle();
+          padding-bottom: 100px;
+
+          @media screen and (max-width: 425px) {
+            font-size: 25px;
+            padding-bottom: 50px;
+          }
+        }
+      }
+
+//Общие стили для блоков доверия и стоимости тура
+      .wrapper-desc {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        row-gap: 88px;
+        column-gap: 40px;
+        padding: 0 86px;
+
+        @media screen and (max-width: 1200px) {
+          padding: 0 20px;
+        }
+
+        @media screen and (max-width: 425px) {
+          row-gap: 42px;
+        }
+
+        .desc-item {
+          position: relative;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          min-height: 168px;
+          width: 284px;
+          .colorBorderOne();
+
+          @media screen and (max-width: 425px) {
+            min-height: 130px;
+            .colorBorderTwo();
+          }
+
+          .item-number {
+            position: absolute;
+            top: -49px;
+            text-align: center;
+            font-family: PhilosopherBold, sans-serif;
+            font-size: 60px;
+            line-height: 1;
+            width: 60px;
+            background-image: linear-gradient(rgba(255, 243, 225, 0.8) 0%, rgba(255, 243, 225, 0.8) 100%);
+            background-repeat: no-repeat;
+            background-position: bottom;
+            background-size: 100% 15px;
+            padding: 0;
+            margin: 0;
+
+            @media screen and (max-width: 425px) {
+              font-size: 35px;
+              width: 42px;
+              top: -28px;
+              background-image: linear-gradient(rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%);
+            }
+          }
+
+          .item-desc {
+            max-width: 180px;
+            text-align: center;
+            font-size: 15px;
+            line-height: 23px;
+
+            @media screen and (max-width: 425px) {
+              max-width: 190px;
+              font-size: 14px;
+              line-height: 20px;
+            }
+          }
+        }
+      }
+
+//Программа тура
+      .program-tour {
+        padding: 60px 0;
+
+        @media screen and (max-width: 425px) {
+          padding: 40px 0;
+        }
+
+        .program-tour-title {
+          text-align: center;
+          .textTitle();
+          padding-bottom: 50px;
+
+          @media screen and (max-width: 425px) {
+            font-size: 25px;
+            padding-bottom: 30px;
+          }
+        }
+
+        .program-tour-items {
+          display: flex;
+          gap: 30px;
+          justify-content: center;
+          flex-wrap: wrap;
+
+          .program-tour-item {
+            position: relative;
+            width: 540px;
+            height: 300px;
+            .colorBorderTwo();
+            padding: 38px 40px;
+            overflow: hidden;
+            background: url("../../assets/images/background-blur.png") no-repeat center right 165px;
+
+            @media screen and (max-width: 580px) {
+              width: 480px;
+              height: 240px;
+              padding: 20px 14px;
+              background: url("../../assets/images/background-blur.png") no-repeat center right 125px;
+            }
+
+            @media screen and (max-width: 480px) {
+              max-width: 400px;
+              height: auto;
+              padding: 16px 14px;
+              background: url("../../assets/images/background-blur.png") no-repeat center right 90px;
+            }
+
+            @media screen and (max-width: 425px) {
+              background: linear-gradient(rgb(255, 243, 225) 0%, rgb(255, 243, 225) 100%) no-repeat center right 125px;
+            }
+
+            @media screen and (max-width: 360px) {
+              background: linear-gradient(rgb(255, 243, 225) 0%, rgb(255, 243, 225) 100%) no-repeat center right 95px;
+            }
+
+            @media screen and (max-width: 330px) {
+              background: linear-gradient(rgb(255, 243, 225) 0%, rgb(255, 243, 225) 100%) no-repeat center right 75px;
+            }
+
+//Стили для картинок
+            .item-show-img {
+              .position-img();
+              right: -120px;
+              height: 100%;
+
+              @media screen and (max-width: 480px) {
+                right: -80px;
+              }
+            }
+
+            .item-bath-img {
+              .position-img();
+              right: 0;
+
+              @media screen and (max-width: 360px) {
+                right: -15px;
+              }
+            }
+
+            .item-canyon-img {
+              .position-img();
+              right: -220px;
+              height: 100%;
+
+              @media screen and (max-width: 580px) {
+                right: -180px;
+              }
+
+              @media screen and (max-width: 480px) {
+                right: -140px;
+              }
+
+              @media screen and (max-width: 360px) {
+                right: -95px;
+              }
+            }
+
+            .item-air-balloon-img {
+              .position-img();
+              right: 0;
+
+              @media screen and (max-width: 360px) {
+                right: -35px;
+              }
+            }
+
+            .item-valley-img {
+              .position-img();
+              right: -80px;
+            }
+
+            .item-walk-img {
+              .position-img();
+              right: -60px;
+              height: 100%;
+            }
+//Конец стилей картинок
+
+            .item-title {
+              font-family: MontserratBold, sans-serif;
+              font-size: 18px;
+              padding-bottom: 28px;
+
+              @media screen and (max-width: 580px) {
+                font-size: 16px;
+                padding-bottom: 18px;
+              }
+
+              @media screen and (max-width: 425px) {
+                font-size: 14px;
+                padding-bottom: 14px;
+              }
+
+              @media screen and (max-width: 380px) {
+                max-width: 194px;
+              }
+            }
+
+//Стили для развёртывания текста на малых экранах
+            .read-more-check {
+              display: none;
+
+              @media screen and (max-width: 480px) {
+                display: block;
+                opacity: 0;
+                position: absolute;
+              }
+
+              &:checked ~ .read-more-button {
+                display: none;
+              }
+
+              &:checked ~ .item-desc {
+                display: block;
+                overflow: visible;
+                -webkit-line-clamp: none;
+              }
+            }
+
+            .item-desc {
+              font-size: 15px;
+              line-height: 23px;
+              max-width: 244px;
+
+              @media screen and (max-width: 580px) {
+                font-size: 14px;
+                line-height: 19px;
+              }
+
+              @media screen and (max-width: 480px) {
+                max-width: 220px;
+                display: -webkit-box;
+                overflow: hidden;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 5;
+              }
+
+              @media screen and (max-width: 380px) {
+                max-width: 200px;
+                -webkit-line-clamp: 4;
+              }
+
+              @media screen and (max-width: 360px) {
+                max-width: 190px;
+                -webkit-line-clamp: 3;
+              }
+            }
+
+            .read-more-button {
+              display: none;
+              font-family: MontserratBold, sans-serif;
+              font-size: 12px;
+              padding-top: 10px;
+              color: @colorBorderOrange;
+
+              @media screen and (max-width: 480px) {
+                display: block;
+              }
+            }
+          }
+        }
+      }
+
+//Что входит в стоимость тура
+      .tour-price {
+        padding: 60px 0 120px 0;
+
+        @media screen and (max-width: 425px) {
+          padding: 40px 0 80px 0;
+        }
+
+        .tour-price-title {
+          text-align: center;
+          .textTitle();
+          padding-bottom: 88px;
+
+          @media screen and (max-width: 425px) {
+            font-size: 25px;
+            padding-bottom: 50px;
+          }
+        }
+
+        .tour-price-wrap {
+          @media screen and (max-width: 680px) {
+            display: none;
+          }
+        }
+
+        .tour-price-wrap-adaptive {
+          display: none;
+          padding: 30px;
+          .colorBorderTwo();
+
+          .price-item {
+            font-size: 14px;
+            margin-bottom: 15px;
+
+            span {
+              font-weight: bold;
+            }
+          }
+
+          .price-item:last-child {
+            margin-bottom: 0;
+          }
+
+          @media screen and (max-width: 680px) {
+            display: block;
+            margin: 0 20px;
+          }
+
+          @media screen and (max-width: 480px) {
+            display: block;
+            margin: 0 10px;
+          }
+
+          @media screen and (max-width: 425px) {
+            display: block;
+            margin: 0;
+          }
+        }
+
+//Не входит в стоимость
+        .tour-price-none {
+          padding-top: 50px;
+
+          .tour-price-none-title {
+            font-family: PhilosopherBold, sans-serif;
+            font-size: 25px;
+            text-align: center;
+            padding-bottom: 30px;
+          }
+
+          .price-none-items {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            column-gap: 100px;
+            row-gap: 30px;
+
+            @media screen and (max-width: 425px) {
+              display: none;
+            }
+
+            .price-none-item {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              font-size: 15px;
+              max-width: 280px;
+              text-align: left;
+
+              span {
+                font-family: PhilosopherBold, sans-serif;
+                font-size: 60px;
+                margin-right: 30px;
+              }
+
+              .item-space {
+                padding-top: 20px;
+              }
+            }
+          }
+
+          .price-none-items-adaptive {
+            display: none;
+            flex-direction: column;
+            align-items: start;
+            gap: 10px;
+            .colorBorderTwo();
+            padding: 30px 20px 30px 30px;
+
+            @media screen and (max-width: 425px) {
+              display: flex;
+            }
+
+            .price-none-item {
+              font-size: 15px;
+              line-height: 23px;
+            }
+          }
+        }
+      }
+    }
+
+    .air-balloon-one {
+      position: absolute;
+      top: 34px;
+      left: 0;
+      z-index: -1;
+
+      @media screen and (max-width: 1440px) {
+        display: none;
+      }
+    }
+
+    .air-balloon-two {
+      position: absolute;
+      bottom: 34px;
+      right: 0;
+      z-index: -1;
+
+      @media screen and (max-width: 1440px) {
+        display: none;
+      }
+    }
+  }
+}

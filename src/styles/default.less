@@ -1,0 +1,51 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: rgb(255, 243, 225);
+  font-family: MontserratRegular, sans-serif;
+  position: relative;
+
+  @media screen and (max-width: 425px) {
+    background-color: rgb(255, 255, 255);
+  }
+}
+
+button {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+iframe {
+  border: 0;
+}
+
+fieldset {
+  border: 0;
+}
