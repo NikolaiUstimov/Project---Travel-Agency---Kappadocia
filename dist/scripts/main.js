@@ -205,16 +205,43 @@ $(function () {
 
 
     //Взаимодействие с модальным окном
-    $('.btn-footer-phone').on('click', function () {
-        $('.modal-wrapper').addClass('open-modal');
+    const modalWrapper = $('.modal-wrapper');
+    //Включение - отключение скролла
+    const scrollController = {
+        disabledScroll() {
+            $('body').css({
+                'overflow': 'hidden',
+            });
+        },
+        enabledScroll() {
+            $('body').css({
+                'overflow': 'visible',
+            });
+        }
+    }
+    //Событие открытия модального окна
+    $('.order-call, .btn-footer-phone').on('click', function () {
+        modalWrapper.addClass('open-modal');
+        scrollController.disabledScroll();
         $('.modal-close').on('click', function () {
-            $('.modal-wrapper').removeClass('open-modal');
+            modalWrapper.removeClass('open-modal');
+            scrollController.enabledScroll();
         });
     });
+    //Закрытие модального окна при клике вне его
+    modalWrapper.on('click', function (event) {
+        const target = $(event.target);
+        if (target.hasClass('open-modal')) {
+            modalWrapper.removeClass('open-modal');
+            scrollController.enabledScroll();
+        }
 
+    });
+    //Закрытие модального окна клавишей "Escape"
     $(window).on('keydown', function(e) {
         if (e.key === "Escape") {
-            $('.modal-wrapper').removeClass('open-modal');
+            modalWrapper.removeClass('open-modal');
+            scrollController.enabledScroll();
         }
     });
 

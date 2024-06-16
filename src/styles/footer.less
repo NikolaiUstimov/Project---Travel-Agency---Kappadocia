@@ -505,7 +505,7 @@
 
 .modal-wrapper {
   position: fixed;
-  top: 0;
+  inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -517,6 +517,7 @@
   background: rgba(0, 0, 0, 0.9);
   transition: 1s;
   z-index: 3;
+  cursor: pointer;
 
   .modal-order-call {
     position: relative;
@@ -525,6 +526,7 @@
     padding: 40px 25px 25px 25px;
     border: 1px solid rgb(253, 144, 64);
     border-radius: 10px;
+    cursor: default;
 
     .modal-close {
       position: absolute;
@@ -533,6 +535,13 @@
       width: 35px;
       height: 35px;
       border-radius: 50%;
+      outline: 1px solid transparent;
+      outline-offset: 1px;
+      transition: .3s;
+
+      &:focus-visible {
+        outline-color: rgb(253, 144, 64);
+      }
 
       img {
         max-width: 100%;
