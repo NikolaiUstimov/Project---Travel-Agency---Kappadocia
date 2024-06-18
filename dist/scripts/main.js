@@ -1,8 +1,18 @@
-"use strict";
 $(function () {
+
+    const navigation = $('.header-nav');
+    $(window).on('scroll', () => {
+        $(window).scrollTop() > 0 && $(window).width() <= 768 ?
+            navigation.css('background', 'rgba(0, 0, 0, 0.6)') :
+            navigation.css('background', 'none');
+    });
 
     //Анимации
     new WOW().init();
+
+    if ($(window).width() <= 768) {
+        navigation.removeClass('wow').removeClass('backInDown').removeAttr('data-wow-duration').removeAttr('data-wow-delay');
+    }
 
 
     //Слайдер для дат туров
@@ -129,6 +139,11 @@ $(function () {
         menuAdaptive.toggleClass('open');
     });
 
+    $('.menu-adaptive *').on('click', function () {
+        $('.menu-adaptive').removeClass('open');
+        burgerMenu.removeClass('open');
+    });
+
 
     //Валидация формы заявки
     const inputName = $('#inputName');
@@ -168,7 +183,15 @@ $(function () {
                     console.log(msg);
                     if (msg.success) {
                         $('.form').hide('slow');
-                        $('.form-text-done').show('slow').css({'visibility': 'visible', 'opacity': '1', 'minHeight': '200px'});
+                        $('.form-text-done').show('slow').css({'visibility': 'visible', 'opacity': '1'});
+
+                        setTimeout(() => {
+                            $('.form').show(500);
+                        }, 5000);
+
+                        setTimeout(() => {
+                            $('.form-text-done').hide('slow').css({'visibility': 'hidden', 'opacity': '0'});
+                        }, 4500);
                     } else {
                         alert("Возникла ошибка при отправке заявки, повторите попытку");
                     }
@@ -283,6 +306,14 @@ $(function () {
                     if (msg.success) {
                         $('.modal-form').hide('slow');
                         $('.modal-form-text-done').show('slow').css({'visibility': 'visible', 'opacity': '1', 'minHeight': '200px'});
+
+                        setTimeout(() => {
+                            $('.modal-form').show(500);
+                        }, 5000);
+
+                        setTimeout(() => {
+                            $('.modal-form-text-done').hide('slow').css({'visibility': 'hidden', 'opacity': '0'});
+                        }, 4500);
                     } else {
                         alert("Возникла ошибка при отправке заявки, повторите попытку");
                     }

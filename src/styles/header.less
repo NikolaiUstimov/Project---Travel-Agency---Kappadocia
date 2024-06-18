@@ -37,13 +37,14 @@
   @media screen and (max-width: 425px) {
     background-image: url("../../assets/images/header320.png");
     &:before {
-      position: relative;
+      position: fixed;
       content: "";
       display: block;
       width: 100%;
       height: 1px;
       background: rgba(163, 98, 51, .3);
-      top: 42px;
+      top: 64px;
+      z-index: 5;
     }
   }
   .container {
@@ -67,6 +68,16 @@
             display: block;
           }
         }
+      }
+
+      @media screen and (max-width: 768px) {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        padding: 20px 15px;
+        transition: all .4s ease;
+        z-index: 5;
       }
     }
 
@@ -336,12 +347,27 @@
 }
 
 .menu-adaptive {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
   visibility: hidden;
   opacity: 0;
   transform: translateY(-100%);
   transition: all 1s;
   text-align: center;
-  padding-top: 20px;
+  padding-bottom: 30px;
+  z-index: 4;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.menu-adaptive .phone .order-call {
+  cursor: pointer;
 }
 
 .menu-adaptive.open {
@@ -352,7 +378,9 @@
 
 .menu-adaptive.open .menu,
 .menu-adaptive.open .phone {
+  position: relative;
   display: block;
+  z-index: 4;
 
   @media screen and (min-width: 768px) {
     display: none;
