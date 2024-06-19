@@ -1,6 +1,8 @@
 $(function () {
 
+    //Назначение стилей для хедера в адаптивной версии
     const navigation = $('.header-nav');
+
     $(window).on('scroll', () => {
         $(window).scrollTop() > 0 && $(window).width() <= 768 ?
             navigation.css('background', 'rgba(0, 0, 0, 0.6)') :
@@ -8,11 +10,10 @@ $(function () {
     });
 
     //Анимации
-    new WOW().init();
-
     if ($(window).width() <= 768) {
         navigation.removeClass('wow').removeClass('backInDown').removeAttr('data-wow-duration').removeAttr('data-wow-delay');
     }
+    new WOW().init();
 
 
     //Слайдер для дат туров
@@ -182,11 +183,13 @@ $(function () {
                 .done(function( msg ) {
                     console.log(msg);
                     if (msg.success) {
+                        // $('.form').removeClass('wow').removeClass('fadeIn').removeAttr('data-wow-duration').removeAttr('data-wow-delay');
                         $('.form').hide('slow');
                         $('.form-text-done').show('slow').css({'visibility': 'visible', 'opacity': '1'});
 
                         setTimeout(() => {
                             $('.form').show(500);
+                                // .removeAttr('data-wow-duration').removeAttr('data-wow-delay');
                         }, 5000);
 
                         setTimeout(() => {
@@ -258,7 +261,6 @@ $(function () {
             modalWrapper.removeClass('open-modal');
             scrollController.enabledScroll();
         }
-
     });
     //Закрытие модального окна клавишей "Escape"
     $(window).on('keydown', function(e) {
