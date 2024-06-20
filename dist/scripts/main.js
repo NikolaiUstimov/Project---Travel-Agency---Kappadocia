@@ -206,6 +206,7 @@ $(function () {
 
     //Валидация формы email
     const inputEmail = $('#inputEmail');
+    const inputWrap = $('.input-wrap');
 
     $('.email').on('submit', function (event) {
         event.preventDefault();
@@ -213,10 +214,12 @@ $(function () {
         const inputEmailLabel = $('[for="inputEmail"]')
 
         inputEmail.removeClass('error');
+        inputWrap.removeClass('border-none');
         $('[for="inputEmail"] p').remove();
         validRes = false;
         if (!inputEmail.val()) {
             inputEmail.addClass('error');
+            inputWrap.addClass('border-none');
             $('.email .input-wrap:before').remove();
             inputEmailLabel.append(`<p style="margin: 10px 0 0 20px; color: red; font-size: 12px; max-width: max-content;">${errorText[2]}</p>`);
             validRes = true;

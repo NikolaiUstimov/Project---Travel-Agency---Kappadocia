@@ -363,6 +363,7 @@
 //Не входит в стоимость
         .tour-price-none {
           padding-top: 50px;
+          text-align: center;
 
           .tour-price-none-title {
             font-family: PhilosopherBold, sans-serif;
@@ -378,6 +379,12 @@
             flex-wrap: wrap;
             column-gap: 100px;
             row-gap: 30px;
+
+            @media screen and (max-width: 650px) {
+              max-width: 300px;
+              margin: 0 auto;
+              justify-content: start;
+            }
 
             @media screen and (max-width: 425px) {
               display: none;
@@ -407,6 +414,7 @@
             display: none;
             flex-direction: column;
             align-items: start;
+            justify-content: left;
             gap: 10px;
             .colorBorderTwo();
             padding: 30px 20px 30px 30px;
@@ -416,6 +424,7 @@
             }
 
             .price-none-item {
+              text-align: left;
               font-size: 15px;
               line-height: 23px;
             }
