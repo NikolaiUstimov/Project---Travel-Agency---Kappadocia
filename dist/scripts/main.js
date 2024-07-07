@@ -153,6 +153,13 @@ $(function () {
     let errorText = ["Введите имя", "Введите телефон", "Введите email"];
     let validRes = false;
 
+    // inputName.oninput = () => {
+    //     if(inputName.value.charAt(0) === ' ') {
+    //         inputName.value = '';
+    //         // e.preventDefault();
+    //     }
+    // };
+
     $('.form').on('submit', function (e) {
         e.preventDefault();
 
