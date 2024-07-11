@@ -153,20 +153,13 @@ $(function () {
     let errorText = ["Введите имя", "Введите телефон", "Введите email"];
     let validRes = false;
 
-    // inputName.oninput = () => {
-    //     if(inputName.value.charAt(0) === ' ') {
-    //         inputName.value = '';
-    //         // e.preventDefault();
-    //     }
-    // };
-
     $('.form').on('submit', function (e) {
         e.preventDefault();
+        validRes = false;
 
         inputName.removeClass('error');
         $('[for="inputName"] p').remove();
-        validRes = false;
-        if (!inputName.val()) {
+        if (!inputName.val().match(/^[А-Яa-z][а-яa-z]+\s*$/)) {
             inputName.addClass('error');
             $('[for="inputName"]').append(`<p style="margin: 10px 0 0 20px; color: red; font-size: 12px; max-width: max-content;">${errorText[0]}</p>`);
             validRes = true;
@@ -174,11 +167,14 @@ $(function () {
 
         inputPhone.removeClass('error');
         $('[for="inputPhone"] p').remove();
-        validRes = false;
         if (!inputPhone.val()) {
             inputPhone.addClass('error');
             $('[for="inputPhone"]').append(`<p style="margin: 10px 0 0 20px; color: red; font-size: 12px; max-width: max-content;">${errorText[1]}</p>`);
             validRes = true;
+        }
+
+        if (validRes) {
+            e.preventDefault();
         }
 
         if (!validRes) {
@@ -190,13 +186,11 @@ $(function () {
                 .done(function( msg ) {
                     console.log(msg);
                     if (msg.success) {
-                        // $('.form').removeClass('wow').removeClass('fadeIn').removeAttr('data-wow-duration').removeAttr('data-wow-delay');
                         $('.form').hide('slow');
                         $('.form-text-done').show('slow').css({'visibility': 'visible', 'opacity': '1'});
 
                         setTimeout(() => {
                             $('.form').show(500);
-                                // .removeAttr('data-wow-duration').removeAttr('data-wow-delay');
                         }, 5000);
 
                         setTimeout(() => {
@@ -217,13 +211,13 @@ $(function () {
 
     $('.email').on('submit', function (event) {
         event.preventDefault();
+        validRes = false;
 
         const inputEmailLabel = $('[for="inputEmail"]')
 
         inputEmail.removeClass('error');
         inputWrap.removeClass('border-none');
         $('[for="inputEmail"] p').remove();
-        validRes = false;
         if (!inputEmail.val()) {
             inputEmail.addClass('error');
             inputWrap.addClass('border-none');
@@ -288,11 +282,11 @@ $(function () {
 
     $('.modal-form').on('submit', function (e) {
         e.preventDefault();
+        validRes = false;
 
         inputNameModal.removeClass('error');
         $('[for="inputNameModal"] p').remove();
-        validRes = false;
-        if (!inputNameModal.val()) {
+        if (!inputNameModal.val().match(/^[А-Яa-z][а-яa-z]+\s*$/)) {
             inputNameModal.addClass('error');
             $('[for="inputNameModal"]').append(`<p style="margin: 10px 0 0 20px; color: red; font-size: 12px; max-width: max-content;">${errorText[0]}</p>`);
             validRes = true;
@@ -300,7 +294,6 @@ $(function () {
 
         inputPhoneModal.removeClass('error');
         $('[for="inputPhoneModal"] p').remove();
-        validRes = false;
         if (!inputPhoneModal.val()) {
             inputPhoneModal.addClass('error');
             $('[for="inputPhoneModal"]').append(`<p style="margin: 10px 0 0 20px; color: red; font-size: 12px; max-width: max-content;">${errorText[1]}</p>`);
